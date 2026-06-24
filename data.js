@@ -22,7 +22,7 @@ window.TPC_DASHBOARD = {
 
   /* --- header / standup ------------------------------------------------- */
   meta: {
-    updated:   "2026-06-22",
+    updated:   "2026-06-24",
     updatedBy: "Claude (Opus 4.8)",
     note:      "Live at hkycaa.github.io/tpc-dashboard · light theme.",
   },
@@ -154,6 +154,7 @@ window.TPC_DASHBOARD = {
       items: [
         { label: "Test Mode + ranking",              state: "todo"   },
         { label: "Payments (Stripe / subscription)",  state: "todo"   },
+        { label: "Adaptive difficulty",               state: "todo"   },
         { label: "Migrate Sheets → Firestore/Supabase", state: "todo" },
         { label: "AI question/image generation",      state: "hold"   },
       ],
@@ -224,6 +225,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "Synced roadmap with TASKS_PHASE1.md — added 'Adaptive difficulty' to Later phases (the one plan item missing from the dashboard)." },
     { date: "2026-06-22", who: "Claude (Opus 4.8)", project: "",
       summary: "Reworked the colour scheme for readability — system map is now colour-coded by owner/layer (Max=teal, Natalie=violet, backend=blue/green)." },
     { date: "2026-06-22", who: "Claude (Opus 4.8)", project: "",
