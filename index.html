@@ -176,8 +176,11 @@
   <footer>Static HTML · no build step · open by double-click. Data lives in <code>data.js</code>.</footer>
 </div>
 
-<!-- data.js assigns window.TPC_DASHBOARD; it must load BEFORE the renderer below -->
-<script src="./data.js"></script>
+<!-- data.js assigns window.TPC_DASHBOARD; it must load BEFORE the renderer below.
+     Loaded with a per-visit cache-buster so GitHub Pages / browser caching can
+     never serve a stale data.js. document.write keeps it synchronous (the
+     script executes before the renderer below runs). -->
+<script>document.write('<script src="./data.js?t=' + Date.now() + '"><\/script>');</script>
 <script>
 (function(){
   var D = window.TPC_DASHBOARD;
