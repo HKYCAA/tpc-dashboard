@@ -108,7 +108,7 @@ window.TPC_DASHBOARD = {
     ],
     next: [
       { title: "WS0 — repo + app skeleton",   project: "tpc-online-platform", owner: "natalie", note: "SPA scaffold + Firebase Auth project (Google sign-in) + hosting decision." },
-      { title: "WS1 — Sheets data layer",     project: "tpc-online-platform", owner: "natalie", note: "Apps Script JSON API + Backend interface (SheetsBackend). The spine." },
+      { title: "WS1 — Sheets data layer",     project: "tpc-online-platform", owner: "natalie", note: "Read path DONE + tested: Questions/QuestionSets sheet live, prototype reads it (gviz CSV). Remaining: Apps Script write API (sessions/attempts) + SheetsBackend adapter." },
       { title: "Deploy pyramid-site",         project: "pyramid-site",        owner: "max",     note: "Vercel/Netlify once parity is reached." },
     ],
     blocked: [
@@ -139,7 +139,7 @@ window.TPC_DASHBOARD = {
       title:   "Phase 1 — Free Practice MVP",
       items: [
         { label: "WS0 · Project setup",               state: "todo"   },
-        { label: "WS1 · Data layer (Sheets + API + adapter)", state: "todo" },
+        { label: "WS1 · Data layer (Sheets + API + adapter)", state: "active" },
         { label: "WS2 · Auth & onboarding",           state: "todo"   },
         { label: "WS3 · App shell & student screens",  state: "todo"   },
         { label: "WS4 · Question engine",             state: "todo"   },
@@ -225,6 +225,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "WS1 read path: stood up the Google Sheets question bank and linked the prototype to it (gviz CSV, read-only). Verified live end-to-end — 40 K2/K3 questions + 5 sets load, DATA_SOURCE flips to 'live' with bundled fallback. Write API (sessions/attempts) + SheetsBackend adapter still outstanding." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "",
       summary: "Fixed stale links: live URL → thepyramidchallenge.github.io/tpc-dashboard; repo URLs → thepyramidchallenge org; workspace marked offline-only." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
