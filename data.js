@@ -40,9 +40,9 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "pyramid-site is the near-term priority: reach visual parity with the live " +
-    "Squarespace site, then deploy. In parallel, start tpc-online-platform WS0→WS1 " +
-    "(the Sheets data layer is the spine of Phase 1).",
+    "tpc-online-platform WS1 (Sheets data layer) is DONE & live on Cloud Run — " +
+    "next is WS2 (real Google auth) + WS0 (app scaffold) to turn the prototype into " +
+    "the real SPA. pyramid-site stays the parallel priority: visual parity → deploy.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -108,7 +108,7 @@ window.TPC_DASHBOARD = {
     ],
     next: [
       { title: "WS0 — repo + app skeleton",   project: "tpc-online-platform", owner: "natalie", note: "SPA scaffold + Firebase Auth project (Google sign-in) + hosting decision." },
-      { title: "WS1 — Sheets data layer",     project: "tpc-online-platform", owner: "natalie", note: "Read path DONE + tested: Questions/QuestionSets sheet live, prototype reads it (gviz CSV). Remaining: Apps Script write API (sessions/attempts) + SheetsBackend adapter." },
+      { title: "WS2 — Auth & onboarding",     project: "tpc-online-platform", owner: "natalie", note: "Real Google Sign-In (Firebase/Supabase Auth) + first-login profile. Next now that the data layer is live." },
       { title: "Deploy pyramid-site",         project: "pyramid-site",        owner: "max",     note: "Vercel/Netlify once parity is reached." },
     ],
     blocked: [
@@ -139,7 +139,7 @@ window.TPC_DASHBOARD = {
       title:   "Phase 1 — Free Practice MVP",
       items: [
         { label: "WS0 · Project setup",               state: "todo"   },
-        { label: "WS1 · Data layer (Sheets + API + adapter)", state: "active" },
+        { label: "WS1 · Data layer (Sheets + API + adapter)", state: "done" },
         { label: "WS2 · Auth & onboarding",           state: "todo"   },
         { label: "WS3 · App shell & student screens",  state: "todo"   },
         { label: "WS4 · Question engine",             state: "todo"   },
@@ -188,7 +188,8 @@ window.TPC_DASHBOARD = {
     %% ---- backend ----
     subgraph BE["Backend"]
       auth["Managed Auth<br/>Firebase / Supabase · Google sign-in"]:::be
-      sheets[("Google Sheets<br/>via Apps Script JSON API<br/>(now)")]:::store
+      api["Cloud Run API<br/>(SheetsBackend · Node)<br/>asia-east2 · live"]:::be
+      sheets[("Google Sheets<br/>Customers · Questions · Results<br/>(service account)")]:::store
       future[("Firestore / Supabase<br/>(flip adapter when<br/>tests scale to 100s)")]:::future
     end
 
@@ -201,8 +202,9 @@ window.TPC_DASHBOARD = {
     admins --> app
     app --> auth
     app --> adapter
-    adapter --> sheets
-    adapter -.->|migration| future
+    adapter --> api
+    api --> sheets
+    api -.->|migration| future
 
     %% owner-tinted regions: teal = Max, violet = Natalie, neutral = infra
     style MKT  fill:#f1f9fb,stroke:#bcdae4,stroke-width:1.5px
@@ -225,6 +227,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "WS1 DONE: full Sheets data layer live + tested. Backend pivoted Apps Script → Cloud Run (Node, asia-east2, project tpc-platform-2026) reading/writing all 3 workbooks via a service account. Verified end-to-end against real sheets — getQuestionSet, upsertUser, saveSession (server-side graded), listUserHistory all 200. Prototype apiUrl wired; reads (gviz) + writes (Cloud Run) both live." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
       summary: "WS1 read path: stood up the Google Sheets question bank and linked the prototype to it (gviz CSV, read-only). Verified live end-to-end — 40 K2/K3 questions + 5 sets load, DATA_SOURCE flips to 'live' with bundled fallback. Write API (sessions/attempts) + SheetsBackend adapter still outstanding." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "",
