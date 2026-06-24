@@ -24,7 +24,7 @@ window.TPC_DASHBOARD = {
   meta: {
     updated:   "2026-06-24",
     updatedBy: "Claude (Opus 4.8)",
-    note:      "Live at hkycaa.github.io/tpc-dashboard · light theme.",
+    note:      "Live at thepyramidchallenge.github.io/tpc-dashboard · light theme.",
   },
 
   /* --- people / ownership 分工 ------------------------------------------
@@ -54,7 +54,7 @@ window.TPC_DASHBOARD = {
       role:  "Squarespace-free rebuild of thepyramidchallenge.org — Next.js (App Router) + React + Tailwind.",
       status: "active",
       health: "active",
-      repo:  "github.com/HKYCAA/pyramid-site",
+      repo:  "github.com/thepyramidchallenge/pyramid-site",
       run:   "cd pyramid-site && npm install && npm run dev   # http://localhost:3000",
       next:  "Reach visual parity with live site → deploy (Vercel/Netlify).",
     },
@@ -66,7 +66,7 @@ window.TPC_DASHBOARD = {
       role:  "Interactive Practice/Test SPA for K2–P6. Backend on Google Sheets behind an adapter (Firestore/Supabase-ready).",
       status: "active",
       health: "active",
-      repo:  "github.com/HKYCAA/tpc-online-platform",
+      repo:  "github.com/thepyramidchallenge/tpc-online-platform",
       run:   "cd tpc-online-platform/prototype && python3 _serve.py   # http://127.0.0.1:5510",
       next:  "Build the Phase-1 free Practice MVP — start WS0 setup → WS1 data layer.",
     },
@@ -90,7 +90,7 @@ window.TPC_DASHBOARD = {
       role:  "Top-level planning docs (README, MIGRATION_PLAN, GIT_STRUCTURE, ASSET_GATHER) + this dashboard. Ignores the subprojects.",
       status: "stable",
       health: "stable",
-      repo:  "github.com/HKYCAA/tpc-workspace",
+      repo:  "— local / offline-only (no remote) —",
       run:   "open dashboard/index.html",
       next:  "Keep this dashboard current as the daily source of truth.",
     },
@@ -225,6 +225,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "",
+      summary: "Fixed stale links: live URL → thepyramidchallenge.github.io/tpc-dashboard; repo URLs → thepyramidchallenge org; workspace marked offline-only." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
       summary: "Synced roadmap with TASKS_PHASE1.md — added 'Adaptive difficulty' to Later phases (the one plan item missing from the dashboard)." },
     { date: "2026-06-22", who: "Claude (Opus 4.8)", project: "",
