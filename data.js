@@ -40,7 +40,7 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform has started WS3 on React + Vite + JavaScript in student-app; " +
+    "tpc-online-platform has started WS3 on React + Vite + JavaScript in prototype-v0.2; " +
     "next is click-through QA and connecting the React flow fully before switching production from prototype.",
 
   /* --- projects --------------------------------------------------------- */
@@ -66,7 +66,7 @@ window.TPC_DASHBOARD = {
       status: "active",
       health: "active",
       repo:  "github.com/thepyramidchallenge/tpc-online-platform",
-      run:   "cd tpc-online-platform/student-app && npm install && npm run dev   # Vite local URL",
+      run:   "cd tpc-online-platform/prototype-v0.2 && npm install && npm run dev   # Vite local URL",
       next:  "React WS3 scaffold is in place. Next: click-through QA, polish, and deployment-path decision.",
     },
     {
@@ -226,7 +226,7 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   changelog: [
     { date: "2026-06-25", who: "Codex", project: "tpc-online-platform",
-      summary: "Started WS3 React rebuild: created student-app as a React + Vite + JavaScript static SPA, ported the student flow shell (sign-in/setup, Home, Practice setup, Quiz, Result, Report, Profile), preserved Cloud Run/GIS adapter boundaries, added bundled K2/K3 data/assets, and verified npm install/build plus local Chrome sign-in render." },
+      summary: "Started WS3 React rebuild: created prototype-v0.2 as a React + Vite + JavaScript static SPA, ported the student flow shell (sign-in/setup, Home, Practice setup, Quiz, Result, Report, Profile), preserved Cloud Run/GIS adapter boundaries, added bundled K2/K3 data/assets, and verified npm install/build plus local Chrome sign-in render." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
       summary: "WS2 DONE: real Google sign-in live + tested end-to-end. Vendor-neutral Google Identity Services on the frontend (TPC.auth adapter) → Cloud Run verifyGoogleToken verifies the ID token server-side; uid = Google sub; first-login writes Customers.Users. Admin role server-authoritative (ADMIN_EMAILS allow-list). Verified a real Google account signed up on production. Note: REQUIRE_AUTH still off (write lockdown is the one remaining toggle). No Firebase/Supabase dependency." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
