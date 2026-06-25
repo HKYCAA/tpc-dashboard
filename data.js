@@ -22,8 +22,8 @@ window.TPC_DASHBOARD = {
 
   /* --- header / standup ------------------------------------------------- */
   meta: {
-    updated:   "2026-06-24",
-    updatedBy: "Claude (Opus 4.8)",
+    updated:   "2026-06-25",
+    updatedBy: "Codex",
     note:      "Live at thepyramidchallenge.github.io/tpc-dashboard · light theme.",
   },
 
@@ -40,9 +40,8 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform WS1 (data layer) + WS2 (real Google sign-in via GIS + " +
-    "Cloud Run token verify) are DONE & live-tested — next is WS3 student screens / " +
-    "WS0 scaffold. pyramid-site stays the parallel priority: visual parity → deploy.",
+    "tpc-online-platform has started WS3 on React + Vite + JavaScript in student-app; " +
+    "next is click-through QA and connecting the React flow fully before switching production from prototype.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -67,8 +66,8 @@ window.TPC_DASHBOARD = {
       status: "active",
       health: "active",
       repo:  "github.com/thepyramidchallenge/tpc-online-platform",
-      run:   "cd tpc-online-platform/prototype && python3 scripts/serve.py   # http://127.0.0.1:5510",
-      next:  "WS1 + WS2 done (data layer + real Google sign-in live). Next: WS3 student screens / WS0 scaffold.",
+      run:   "cd tpc-online-platform/student-app && npm install && npm run dev   # Vite local URL",
+      next:  "React WS3 scaffold is in place. Next: click-through QA, polish, and deployment-path decision.",
     },
     {
       id:    "mainpage",
@@ -103,12 +102,11 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   board: {
     now: [
+      { title: "WS3 — React student app QA", project: "tpc-online-platform", owner: "natalie", note: "React + Vite + JavaScript scaffold is built; click through Home → Practice → Result → Report before production switch." },
       { title: "Hero parallax parity",        project: "pyramid-site",        owner: "max",     note: "7-layer hero is reproducible offline — confirm it matches live." },
       { title: "Absorb scoring/report graphics", project: "pyramid-site",     owner: "max",     note: "distribution curve, scoring table, radar 1/2 → public/img (ASSET_GATHER §B)." },
     ],
     next: [
-      { title: "WS3 — App shell & student screens", project: "tpc-online-platform", owner: "natalie", note: "Connect the prototype screens: Home · Practice setup · Question runner · Result · Report · Profile." },
-      { title: "WS0 — app scaffold / framework call", project: "tpc-online-platform", owner: "natalie", note: "Keep vanilla prototype or rebuild (React/Vue)? OAuth client + GitHub Pages already set up via WS2." },
       { title: "Deploy pyramid-site",         project: "pyramid-site",        owner: "max",     note: "Vercel/Netlify once parity is reached." },
     ],
     blocked: [
@@ -138,10 +136,10 @@ window.TPC_DASHBOARD = {
       owner:   "natalie",
       title:   "Phase 1 — Free Practice MVP",
       items: [
-        { label: "WS0 · Project setup",               state: "todo"   },
+        { label: "WS0 · Project setup",               state: "done"   },
         { label: "WS1 · Data layer (Sheets + API + adapter)", state: "done" },
         { label: "WS2 · Auth & onboarding",           state: "done"   },
-        { label: "WS3 · App shell & student screens",  state: "todo"   },
+        { label: "WS3 · App shell & student screens",  state: "active" },
         { label: "WS4 · Question engine",             state: "todo"   },
         { label: "WS5 · Admin & content",             state: "todo"   },
         { label: "WS6 · QA, polish, pilot → launch",   state: "todo"   },
@@ -227,6 +225,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-25", who: "Codex", project: "tpc-online-platform",
+      summary: "Started WS3 React rebuild: created student-app as a React + Vite + JavaScript static SPA, ported the student flow shell (sign-in/setup, Home, Practice setup, Quiz, Result, Report, Profile), preserved Cloud Run/GIS adapter boundaries, added bundled K2/K3 data/assets, and verified npm install/build plus local Chrome sign-in render." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
       summary: "WS2 DONE: real Google sign-in live + tested end-to-end. Vendor-neutral Google Identity Services on the frontend (TPC.auth adapter) → Cloud Run verifyGoogleToken verifies the ID token server-side; uid = Google sub; first-login writes Customers.Users. Admin role server-authoritative (ADMIN_EMAILS allow-list). Verified a real Google account signed up on production. Note: REQUIRE_AUTH still off (write lockdown is the one remaining toggle). No Firebase/Supabase dependency." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
