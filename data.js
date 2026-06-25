@@ -23,7 +23,7 @@ window.TPC_DASHBOARD = {
   /* --- header / standup ------------------------------------------------- */
   meta: {
     updated:   "2026-06-25",
-    updatedBy: "Codex",
+    updatedBy: "Claude",
     note:      "Live at thepyramidchallenge.github.io/tpc-dashboard · light theme.",
   },
 
@@ -40,8 +40,8 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform has started WS3 on React + Vite + JavaScript in prototype-v0.2; " +
-    "next is click-through QA and connecting the React flow fully before switching production from prototype.",
+    "tpc-online-platform WS3 (React student app, prototype-v0.2) is DONE & live in production with auth enforced and a passing test suite; " +
+    "next is WS4 — the pluggable question engine.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -67,7 +67,7 @@ window.TPC_DASHBOARD = {
       health: "active",
       repo:  "github.com/thepyramidchallenge/tpc-online-platform",
       run:   "cd tpc-online-platform/prototype-v0.2 && npm install && npm run dev   # Vite local URL",
-      next:  "React WS3 scaffold is in place. Next: click-through QA, polish, and deployment-path decision.",
+      next:  "WS3 done & live (v0.2 in production, REQUIRE_AUTH=true, Vitest suite green). Next: WS4 question engine.",
     },
     {
       id:    "mainpage",
@@ -102,11 +102,11 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   board: {
     now: [
-      { title: "WS3 — React student app QA", project: "tpc-online-platform", owner: "natalie", note: "React + Vite + JavaScript scaffold is built; click through Home → Practice → Result → Report before production switch." },
       { title: "Hero parallax parity",        project: "pyramid-site",        owner: "max",     note: "7-layer hero is reproducible offline — confirm it matches live." },
       { title: "Absorb scoring/report graphics", project: "pyramid-site",     owner: "max",     note: "distribution curve, scoring table, radar 1/2 → public/img (ASSET_GATHER §B)." },
     ],
     next: [
+      { title: "WS4 — Question engine",        project: "tpc-online-platform", owner: "natalie", note: "Extract pluggable renderer+grader registry; verify all 40 K2/K3 seeds; bookmark persistence + dedup; generate 69 missing per-choice images." },
       { title: "Deploy pyramid-site",         project: "pyramid-site",        owner: "max",     note: "Vercel/Netlify once parity is reached." },
     ],
     blocked: [
@@ -139,7 +139,7 @@ window.TPC_DASHBOARD = {
         { label: "WS0 · Project setup",               state: "done"   },
         { label: "WS1 · Data layer (Sheets + API + adapter)", state: "done" },
         { label: "WS2 · Auth & onboarding",           state: "done"   },
-        { label: "WS3 · App shell & student screens",  state: "active" },
+        { label: "WS3 · App shell & student screens",  state: "done"   },
         { label: "WS4 · Question engine",             state: "todo"   },
         { label: "WS5 · Admin & content",             state: "todo"   },
         { label: "WS6 · QA, polish, pilot → launch",   state: "todo"   },
@@ -225,6 +225,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-25", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "WS3 DONE: React student app (prototype-v0.2) is production. Close-out review fixed B1 (one-practice-one-save), B4 (instant feedback = no timer), C1 (notification badge clears) and C3 cleanup. Gates closed — browser QA passed, production switched to the v0.2 build (deploy.sh → gh-pages), and REQUIRE_AUTH=true enforced on Cloud Run (rev tpc-api-00006-jsm; real-login save verified). Added a Vitest + Testing Library suite (138 pass, 1 skipped). Known gap: 69 per-choice crop images missing (deferred to WS4/WS5)." },
     { date: "2026-06-25", who: "Codex", project: "tpc-online-platform",
       summary: "Started WS3 React rebuild: created prototype-v0.2 as a React + Vite + JavaScript static SPA, ported the student flow shell (sign-in/setup, Home, Practice setup, Quiz, Result, Report, Profile), preserved Cloud Run/GIS adapter boundaries, added bundled K2/K3 data/assets, and verified npm install/build plus local Chrome sign-in render." },
     { date: "2026-06-24", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
