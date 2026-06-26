@@ -227,6 +227,8 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   changelog: [
     { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
+      summary: "Deployed WS4.1-05 live: Cloud Run revision tpc-api-00009-jgs is serving 100% traffic, public frontend gh-pages f6e11ff includes the bookmark toggle-off call, production read smoke passed, and unauthenticated write rejection remains enforced." },
+    { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
       summary: "Implemented WS4.1-05 removeBookmark end-to-end: Cloud Run now removes matching Results.Bookmarks rows with verified identity binding, the frontend calls removeBookmark when toggling off, and the smoke script verifies add/remove/list." },
     { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
       summary: "Roadmap numbering sync: WS3.1 is app shell, WS3.2 is close-out, WS4.1 is question engine, and WS4.2 is mock/full-set work. Updated dependent roadmap references and dashboard labels; next platform task is WS4.1-05 removeBookmark end-to-end." },
