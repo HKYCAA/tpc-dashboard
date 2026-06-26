@@ -23,7 +23,7 @@ window.TPC_DASHBOARD = {
   /* --- header / standup ------------------------------------------------- */
   meta: {
     updated:   "2026-06-26",
-    updatedBy: "Codex",
+    updatedBy: "Claude (Opus 4.8)",
     note:      "Live at thepyramidchallenge.github.io/tpc-dashboard · light theme.",
   },
 
@@ -40,7 +40,7 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform WS4.1 is closed and live-smoked; next platform focus is WS4.2 fixed QuestionSet practice plus WS5 content/admin approval.",
+    "tpc-online-platform WS4.1 is closed and live-smoked. A WS1–4.1 risk review fixed R1 (upsertQuestion admin-gate, live) and R2 (source/exposure deploy) and routed R3→WS4.3, R4→WS5-13, R5→WS6-14. Next: clear the remaining review risks (R6–R12) and the R3/R5 pre-pilot blockers, then WS4.2 / WS5.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -108,6 +108,7 @@ window.TPC_DASHBOARD = {
       { title: "WS4.2 — Fixed QuestionSet practice", project: "tpc-online-platform", owner: "natalie", note: "Run a selected QuestionSet in fixed order through the existing runner with test-like defaults." },
       { title: "WS4.3 — Save/session integrity", project: "tpc-online-platform", owner: "natalie", note: "Route R3 here: fail closed on unknown question IDs and decide completed vs draft session storage before pilot/ranking." },
       { title: "WS5 — Content approval path", project: "tpc-online-platform", owner: "natalie", note: "Approve/author serveable sheet questions; current live policy returns 0 sheet questions until rows pass status/source/exposure gates." },
+      { title: "Risk pass — R6–R12 (review follow-ups)", project: "tpc-online-platform", owner: "natalie", note: "From the WS1–4.1 review: R6 timeout-less save can hang on Submitting; R7 no error boundary + unguarded payload.choices; R8 concurrent Sheets writes; R9 auth-rollback fragility; R10 69 missing images; R11 thin cross-device report; R12 input validation. R3 (WS4.3) + R5 (WS6-14) are pre-pilot blockers." },
       { title: "Deploy pyramid-site",         project: "pyramid-site",        owner: "max",     note: "Vercel/Netlify once parity is reached." },
     ],
     blocked: [
@@ -229,8 +230,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
-    { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
-      summary: "Routed R3 out of WS4.1 into new WS4.3 Save/session integrity: completed-session save hardening, forged-score fallback removal, and draft/resume storage decisions before pilot or ranking data matters." },
+    { date: "2026-06-26", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "Full WS1–4.1 risk review (verified against code, live backend, and tests). Catalogued R1–R12. Confirmed Codex's R1–R5 handling is sound: R1 admin-gate is correct and enforced live (POST upsertQuestion w/o token → rejected), R2 source/exposure deploy is live (listQuestions now returns 0 sheet rows; bundled fallback covers the app), R3 forged-score routed to WS4.3-01, R4 exposure cap honestly removed + routed to WS5-13, R5 read IDOR routed to WS6-14. Backend tests 4 pass. Flagged R3 + R5 as live-exploitable pre-pilot blockers, and R6–R12 (save-timeout hang, no error boundary, concurrent Sheets writes, etc.) for the next pass." },
     { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
       summary: "Hardened WS4.1 closure for R1: deployed Cloud Run revision tpc-api-00011-l5l with upsertQuestion admin-gated to verified ADMIN_EMAILS. Backend tests now cover missing, non-admin, unverified-admin, and verified-admin identities; live smoke rejects unauthenticated upsertQuestion and keeps source/exposure checks green." },
     { date: "2026-06-26", who: "Codex", project: "tpc-online-platform",
