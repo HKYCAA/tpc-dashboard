@@ -255,7 +255,7 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   changelog: [
     { date: "2026-06-27", who: "Codex", project: "tpc-online-platform",
-      summary: "Implemented R5 authenticated reads by default: Cloud Run tpc-api-00012-sqq now leaves only ping public; unauthenticated listQuestions/getQuestionSet/upsertQuestion reject in live smoke; user-owned reads derive uid/email from the verified token. Public frontend gh-pages 80de9f1 now sends ID tokens for protected reads. Backend tests 6 pass; frontend tests 192 pass, 1 skipped." },
+      summary: "Implemented R5 authenticated reads by default: Cloud Run tpc-api-00012-sqq now leaves only ping public; unauthenticated listQuestions/getQuestionSet/upsertQuestion reject in live smoke; user-owned reads derive uid/email from the verified token. Public frontend gh-pages 447c7b0 now sends ID tokens for protected reads and keeps bundled samples out of the production JS bundle. Backend tests 6 pass; frontend tests 192 pass, 1 skipped." },
     { date: "2026-06-27", who: "Claude (Opus 4.8)", project: "",
       summary: "Constitution: added an 'evidence gates build — don't build ahead of validation' operating principle (no Phase-2+ iPad/subscription infra before E1/E2). Also wired all repo agent-entrypoints (admin CLAUDE.md, public README, pyramid-site CLAUDE.md) to point at the Business Space before product/strategy decisions." },
     { date: "2026-06-27", who: "Claude (Opus 4.8)", project: "",
