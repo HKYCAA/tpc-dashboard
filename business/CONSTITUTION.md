@@ -68,6 +68,9 @@ ranking database**, not as charity or a gimmick.
   welcome; **silent** disagreement is the failure mode.
 - On any dispute: separate **fact / assumption / evidence / missing-evidence**,
   then name the **experiment** that resolves it. Prefer experiments over debates.
+- **Evidence gates build — don't build ahead of validation.** Concretely: do not
+  build Phase-2+ infrastructure (iPad live event, full subscription stack) before
+  E1/E2 return a positive read. Excitement is not evidence. (See D7.)
 - Don't inflate evidence (report "53%" as "just over half", not "most").
 - **Communication style:** the founder prefers **港式中文 mixed with English
   technical terms** in conversation. Durable docs in this folder stay in English
