@@ -31,6 +31,19 @@ uncertainty.
 The two halves are **coupled**: online add-ons (reports / awards / tiers) sell
 *because* the live event mints the credibility behind them.
 
+## Long-term arc
+
+TPC's deepest positioning is **assessment infrastructure**, not "an online maths
+competition". Build the digital engine **online first** (low-risk), then
+**digitize the live event** (iPad check-in → assign → timed → instant marking →
+live leaderboard), and feed live-verified results back into a longitudinal,
+**cross-context ability portfolio** per child (live + online + practice +
+integrity). The real product is that *compounding portfolio* — not a one-off
+report. This turns TPC from an *event business* into an *assessment
+infrastructure + subscription + live-verification* hybrid. The arc is the
+destination, **gated on Phase-1 validation** — not a pre-committed build-out.
+Detail: `DECISIONS.md` D7.
+
 ## Decision framework (evaluate options roughly in this order)
 
 1. Does it help us **learn about parents**?

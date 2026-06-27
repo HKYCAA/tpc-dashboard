@@ -124,13 +124,15 @@
   @media(max-width:720px){.board{grid-template-columns:1fr}.le{grid-template-columns:78px 1fr}.le .w{display:none}}
 
   /* view switcher (Workspace ⇄ Business space) */
-  .viewnav{display:inline-flex;gap:4px;margin:18px 0 4px;background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:4px}
-  .viewnav button{appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:13.5px;font-weight:600;color:var(--muted);padding:8px 15px;border-radius:8px;display:inline-flex;align-items:center;gap:7px;transition:.12s}
-  .viewnav button .zh{font-size:11.5px;font-weight:400;opacity:.8}
-  .viewnav button .ic{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.55}
-  .viewnav button:hover{color:var(--ink)}
-  .viewnav button[aria-selected="true"]{background:var(--panel);color:var(--teal-deep);box-shadow:0 1px 2px rgba(20,40,50,.10)}
-  .viewnav button[aria-selected="true"] .ic{opacity:1}
+  .viewnav{display:inline-flex;gap:6px;margin:26px 0 8px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:6px;box-shadow:0 2px 8px rgba(20,40,50,.07)}
+  .viewnav button{appearance:none;border:0;background:transparent;cursor:pointer;font:inherit;font-size:15px;font-weight:600;color:var(--muted);padding:11px 22px;border-radius:9px;display:inline-flex;align-items:center;gap:8px;transition:.14s;letter-spacing:.2px}
+  .viewnav button .zh{font-size:12.5px;font-weight:400;opacity:.85}
+  .viewnav button .ic{width:8px;height:8px;border-radius:50%;background:currentColor;opacity:.4}
+  .viewnav button:hover{color:var(--ink);background:var(--panel-2)}
+  .viewnav button[aria-selected="true"]{background:var(--teal);color:#fff;box-shadow:0 2px 7px rgba(43,100,120,.32)}
+  .viewnav button[aria-selected="true"]:hover{background:var(--teal-deep);color:#fff}
+  .viewnav button[aria-selected="true"] .zh{opacity:.9}
+  .viewnav button[aria-selected="true"] .ic{background:#fff;opacity:1}
   .view[hidden]{display:none}
 
   /* business sub-nav (document pills) */

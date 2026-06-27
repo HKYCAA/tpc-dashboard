@@ -77,3 +77,18 @@ Status: `UNVALIDATED` · `PARTIAL` (some evidence) · `VALIDATED` · `REJECTED`
   maintainable in-house even if the current owner is unavailable, so the real
   floor is "who staffs content/QC", not "who writes code".
 - Links: H3 · Q1 · Q3
+
+### H6 — Credible-ranking / integrity IS the paid-tier moat (not a feature)
+- Status: **ASSERTED** (strategic belief; follows from H1 + D3, not yet market-tested)
+- Updated: 2026-06-27
+- Belief: because AI makes content/questions ~free, TPC's defensible value is a
+  *credible, graded, explainable* benchmark. The integrity system is therefore the
+  core moat of the paid tier — and its deepest, hardest-to-copy mechanic is
+  **ability-profile consistency calibrated against live results** (online-inflated
+  vs live-median → flag), which a competitor without a live event cannot replicate.
+- Evidence: consistent with H1 (parents pay for credible measurement) and D3 (live
+  = credibility anchor); the price ladder already encodes it ($99 online vs $160
+  live report, D1).
+- How we'll know: whether the integrity tier moves willingness-to-pay / prize trust
+  (ties to E1/E2); whether live-vs-online calibration yields actionable flags.
+- Links: D6 · D1 · D3 · H1

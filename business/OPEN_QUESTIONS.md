@@ -13,12 +13,14 @@ piece of evidence. Don't let them quietly disappear.
   (H5) and is tied to trust — over-automation risks the moat.
 - Gates: the whole funnel top; H3/H5 cost assumptions. Links: ROADMAP WS5.
 
-### Q2 — Ranking credibility threshold + cheating tolerance
-- How many **active users per year-level** before "top X%" is statistically
-  meaningful (and "全港" framing becomes honest — see D5)? And: for a *measurement*
-  company, **integrity is the product** — what is the founder's actual anti-cheat
-  tolerance, as a number, for the online (un-proctored) test?
-- Gates: D5, H2 (online ranking credibility). Links: ROADMAP WS7-06.
+### Q2 — Ranking credibility thresholds (framework now set by D6)
+- The integrity *framework* is decided in **D6** (graded trust tiers + integrity
+  score gating prize eligibility). Remaining unknowns: (a) how many **active users
+  per cohort** before "top X%" is statistically meaningful (also gates D5/"全港");
+  (b) the **numeric thresholds** (tab-switch count, time-away, response-time floor,
+  profile-deviation) that map to High/Med/Low — calibrate from logged data, don't
+  guess; (c) confirm the **camera/mic skip** recommended in D6.
+- Gates: D5, D6, H2, H6. Links: ROADMAP WS7-06.
 
 ### Q3 — Exact online monthly cost, and its decline curve
 - H3/H5 hinge on cost. Track the real monthly all-in (labour + AI + infra + ads)
@@ -51,3 +53,10 @@ piece of evidence. Don't let them quietly disappear.
   shapes ranking cohorts (D5), content localisation (language, curriculum
   alignment), and marketing. Decide the target-market set and how rankings are
   sliced (global vs per-region vs both). Links: D5.
+
+### Q9 — When to trigger live-event digitization (D7 Phase 2)?
+- D7 gates Phases 2–4 on Phase-1 validation. Define the trigger: which engine
+  capabilities must be *proven online* (marking reliability, ranking dispute-rate,
+  K2/K3 usability, difficulty calibration, integrity-signal usefulness, report WTP)
+  before putting iPads in a live venue — plus the operational-readiness bar (iPad
+  count, Wi-Fi, login/QR, battery, crash/backup plan, staff training). Links: D7.

@@ -255,6 +255,8 @@ window.TPC_DASHBOARD = {
    * --------------------------------------------------------------------- */
   changelog: [
     { date: "2026-06-27", who: "Claude (Opus 4.8)", project: "",
+      summary: "Business Space updates: D6 integrity model (graded trust tiers; integrity score gates prize eligibility; camera/mic skipped, no public shaming, log-now-enforce-later) + H6 (anti-cheat = the paid-tier moat); D7 the long arc (online builds the engine → digitized iPad live event + live leaderboard → cross-context ability portfolio; reframes TPC as an assessment-infrastructure hybrid); D5 ranking = 'top X% among TPC challengers' + cohort/region disclosure; Q8 markets, Q9 digitization trigger. Nav-bar view switcher restyled (teal active) to stand out." },
+    { date: "2026-06-27", who: "Claude (Opus 4.8)", project: "",
       summary: "Created the Business Space (business/) — TPC's decision memory for the *why*: CONSTITUTION (what TPC is, decision framework, AI-should-challenge) + DECISIONS (pricing/funnel ladder, 6-mo bundle, live=loss-leader, transactional-first, ranking framing) + HYPOTHESES (H1 report-WTP PARTIAL, H2 trust-transfer UNVALIDATED, H3 self-sustain model) + EXPERIMENTS (E1 online $99 report attach = north-star, E2 bundle renewal, E3 live break-even) + OPEN_QUESTIONS + an update protocol. Grounded in the Season 2 economics analysis." },
     { date: "2026-06-27", who: "Claude (Opus 4.8)", project: "",
       summary: "Added the migrated repos to the board: tpc-online-platform-admin (full private project — frontend v0.2 + Cloud Run backend + docs) and entrance-qr-scan (staff check-in QR scanner). All repos now under the thepyramidchallenge org." },

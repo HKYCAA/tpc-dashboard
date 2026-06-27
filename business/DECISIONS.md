@@ -89,3 +89,89 @@ go at the bottom; never reuse a number.
   composition can be shown.
 - Links: Q2 · Q8 · CONSTITUTION (trust)
 - Revisit: when active users per cohort pass an agreed credibility threshold (Q2).
+
+### D6 — Integrity model: graded, explainable trust (the paid-tier moat)
+- Status: ACCEPTED (framework + refinements confirmed 2026-06-27)
+- Updated: 2026-06-27
+- Body: the goal is **not** 100% cheat-prevention but a **credible, graded,
+  explainable integrity score**. Three trust tiers:
+  1. **Practice / Unverified** — learning product (AI explain, error analysis,
+     training); not in the official ranking (or a separate "practice board"); light
+     integrity.
+  2. **Online Ranked / Integrity-Checked** — the monthly challenge; enters the
+     ranking *with an integrity indicator* (Standard Verified · Integrity Warning ·
+     Not Eligible for Prize). This is the main funnel (free monthly, eCert, Top-3%
+     coupon).
+  3. **Live Verified** — live-event result; highest trust ("Official TPC Score",
+     eligible for award / trophy / school-portfolio use).
+
+  Integrity score (High / Medium / Low) gates **prize eligibility**, not ranking
+  inclusion. To parents: *"not eligible for prize due to incomplete integrity
+  check"* — never an accusation of cheating.
+
+  **MVP v1 (5 things):** full-screen/focus detection · answer-timeline logging ·
+  question randomization (order + numbers) · integrity score (High/Med/Low) ·
+  prize-eligibility rule.
+- Why: in the AI era content is ~free; the defensible moat is **credible ranking +
+  ability comparison + long-term profile + trust**. So anti-cheat **is** the
+  paid-tier moat, not a side feature (see H6). The tiers also make the live event
+  indispensable (apex trust) and create an online→live conversion narrative
+  ("validate your online Top-3% at the live event for an Official Score"). The
+  **trust ladder = the price ladder**: $99 online report vs $160 live report (D1)
+  is exactly the Online-Standard vs Live-Verified premium.
+- Decided refinements (2026-06-27):
+  - **No camera/mic** — skipped (not deferred): recording K2–P6 minors at home is a
+    privacy/PDPO + consent + parental-resistance + fragility cost for low marginal
+    gain over behavioural + item-design + profile methods, and cuts against the
+    trust brand. Lean on B (behavioural) + C (item design) + D (profile).
+  - **No public shaming** — the integrity score gates prize eligibility *quietly*;
+    do not publicly label a paying parent's result "Low Integrity" early
+    (false-positive backlash). High precision / low false-positive.
+  - **Log day 1, enforce later** — high-value methods (profile-consistency, timing
+    anomalies) need history + population baselines absent in month 1. Log
+    everything cheaply now; score/enforce once baselines exist. Early integrity
+    rests on item randomization (day 1) + honesty pledge + live calibration.
+- Links: D1 (price=trust ladder) · D3 (live=apex) · D5 (ranking) · H6 · Q1
+  (item-design = the content-engine investment; invest once, win twice) ·
+  ROADMAP WS7-06 (integrity signals)
+- Revisit: set numeric thresholds once behavioural data is collected.
+
+### D7 — The long arc: platform-first → digitized live → unified portfolio
+- Status: ACCEPTED (strategic direction; phases gated on validation)
+- Updated: 2026-06-27
+- Body: TPC's deepest positioning is **assessment infrastructure**, not "an online
+  maths competition". Build the digital engine online first, then migrate the
+  physical event onto it:
+  - **Phase 1 — Online builds the engine.** Question bank, year/age banding, online
+    submission, instant marking, ability breakdown, ranking logic, integrity score
+    (D6), monthly challenge, paid analysis tier. Goal is *not* online-contest
+    revenue per se — it's proving the engine (UI clarity, K2/K3 usability, marking
+    reliability, ranking dispute-rate, report WTP, anti-cheat signal, difficulty
+    calibration) in a **low-risk** environment.
+  - **Phase 2 — Digitize the live event.** iPad-based: QR check-in → system assigns
+    paper → countdown → answer → submit → instant marking. Paper kept as early
+    backup; the core data flow moves onto the platform.
+  - **Phase 3 — Live leaderboard as event experience.** Provisional ranking on a big
+    screen, by year/level, updating live; instant award-list / certificate data (no
+    manual spreadsheet entry). **Leaderboard split: parents/staff see the full
+    ranking; children see progress / badges / personal best / completion** — protects
+    young learners (K2 = 41%) and is *how we soften the "elite" tone (Q7) without
+    losing credibility*.
+  - **Phase 4 — Live results feed the online profile.** Live-verified score writes
+    back into a longitudinal, cross-context **ability portfolio** (live + online +
+    practice + integrity + skill-domain history + percentile trend + live-vs-online
+    consistency).
+- Why: reframes TPC from an **event business** into an **assessment infrastructure
+  + recurring subscription + live verification** hybrid. The real product becomes
+  the **cross-context longitudinal portfolio**, not a one-off report (the report is
+  a snapshot export of it). The portfolio **compounds** — every month of data makes
+  it more valuable and harder to copy → the deepest moat. It also *retroactively
+  justifies* building the question/marking/ranking engine (ROADMAP WS4–WS8) even
+  though "measurement, not content, is the moat": that engine **is** the live-event
+  infrastructure, and online is its low-risk proving ground.
+- Discipline: the arc is the destination, **not a pre-committed build-out**. Phases
+  2–4 stay gated on Phase-1 validation (esp. E1 trust-transfer, report WTP). Don't
+  buy iPads / build on-site infra on faith.
+- Links: D3 (live=apex) · D6 (integrity) · H1 · H6 · Q7 (leaderboard split softens
+  tone) · Q9 · ROADMAP WS4–WS8 (the Phase-1 engine), WS7 (test/ranking)
+- Revisit: Phase-2 trigger = Phase-1 engine proven (see Q9).
