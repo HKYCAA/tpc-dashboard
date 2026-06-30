@@ -40,7 +40,7 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform WS4.3 save/session integrity is live on the backend: Results.DraftSessions exists in Google Sheets, Cloud Run tpc-api-00016-f7p serves 100%, and tests/build pass. Next platform focus: WS5 admin/content, then WS4.2 fixed QuestionSet practice and WS6 pilot polish.",
+    "tpc-online-platform WS4.3 save/session integrity is live on the backend: Results.DraftSessions exists, Cloud Run tpc-api-00017-ct4 serves 100%, attemptId is backend-generated, and live Sheets now include 30 K2 authored dummy arithmetic questions for signed-in testing. Next platform focus: WS5 admin/content, then WS4.2 fixed QuestionSet practice and WS6 pilot polish.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -129,7 +129,7 @@ window.TPC_DASHBOARD = {
       { title: "Absorb scoring/report graphics", project: "pyramid-site",     owner: "max",     note: "distribution curve, scoring table, radar 1/2 → public/img (ASSET_GATHER §B)." },
     ],
     next: [
-      { title: "WS5 — Admin & content", project: "tpc-online-platform", owner: "natalie", note: "Engineering #2. List/lifecycle UI (WS5-01), editor+validation (WS5-02), backend state machine (WS5-03), seed authored sets only — never real_seed (WS5-04). Live policy serves 0 sheet questions until rows are approved." },
+      { title: "WS5 — Admin & content", project: "tpc-online-platform", owner: "natalie", note: "Engineering #2. List/lifecycle UI (WS5-01), editor+validation (WS5-02), backend state machine (WS5-03), seed authored sets only — never real_seed (WS5-04). Live Sheets now include 30 K2 authored dummy arithmetic rows for testing; production-quality content remains open." },
       { title: "WS4.2 — Fixed QuestionSet practice", project: "tpc-online-platform", owner: "natalie", note: "Engineering #3. Run a QuestionSet in fixed order through the runner (test-like defaults). Depends on WS5-04 sets." },
       { title: "WS6 — Polish → pilot → launch", project: "tpc-online-platform", owner: "natalie", note: "Engineering #4. Accuracy/copy/timer/accessibility + concurrency smoke (R8, WS6-10) → WS6-11 pilot → launch free Practice. R7 malformed-payload guard already done (WS4.1-08)." },
       { title: "WS7-06 + WS9-00 — integrity logging + $99 report (E1)", project: "tpc-online-platform", owner: "natalie", note: "Business tier (E1 north-star). Co-ship: WS7-06 log-only integrity (randomization + focus/blur + answer-timeline, D6) so the first online challenge carries baseline integrity, THEN/with WS9-00 $99 report off that result via the Sheets→Affinity pipeline (D4). WS7/8/9 subscription gated on E1/E2 (D7)." },
@@ -255,6 +255,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-30", who: "Codex (GPT-5)", project: "tpc-online-platform",
+      summary: "Switched Attempts.attemptId to backend-generated only, added regression coverage, deployed Cloud Run tpc-api-00017-ct4, and updated live Results.Fields. Added 30 K2 authored/approved dummy arithmetic questions plus set_k2_dummy_arithmetic_01 to live TPC Questions for signed-in testing; backend tests 13 pass and live ping is healthy." },
     { date: "2026-06-30", who: "Codex (GPT-5)", project: "tpc-online-platform",
       summary: "Deployed WS4.3 backend/table work: live TPC Results now has DraftSessions with header/status validation and Fields docs; Cloud Run tpc-api-00016-f7p serves 100% with fail-closed server grading, sessionId idempotency, and DraftSessions endpoints. Frontend code creates/resumes server drafts and queues failed completed saves. Backend tests 12 pass, frontend tests 197 pass/1 skipped, build passed, live ping healthy." },
     { date: "2026-06-30", who: "Codex (GPT-5)", project: "tpc-online-platform",
