@@ -22,8 +22,8 @@ window.TPC_DASHBOARD = {
 
   /* --- header / standup ------------------------------------------------- */
   meta: {
-    updated:   "2026-06-28",
-    updatedBy: "Codex",
+    updated:   "2026-06-30",
+    updatedBy: "Codex (GPT-5)",
     note:      "Live at thepyramidchallenge.github.io/tpc-dashboard · light theme. · Business Space (the *why*): business/ (CONSTITUTION + decisions/hypotheses/experiments).",
   },
 
@@ -40,7 +40,7 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform WS2-07 region/year-level capture is live (D5; backend tpc-api-00015-khx + public bundle index-PmkUqDvs.js). Next engineering order: WS4.3 save integrity → WS5 admin/content → WS4.2 mock → WS6 polish/pilot/launch; then Business-Space validation — WS7-06 integrity logging day-1 (D6) + WS9-00 $99 report MVP (E1 north-star, D4). WS7/WS8/WS9 subscription remains gated on E1/E2 (D7 'evidence gates build').",
+    "tpc-online-platform WS2-07 region/year-level capture is live. WS4.3 planning is now concrete: server-created cross-device drafts, stable draftId/sessionId idempotency, server-gradeable submissions only, and only ping public. Next engineering order: WS4.3 → WS5 → WS4.2 → WS6; then Business-Space validation (WS7-06 + WS9-00).",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -129,7 +129,7 @@ window.TPC_DASHBOARD = {
       { title: "Absorb scoring/report graphics", project: "pyramid-site",     owner: "max",     note: "distribution curve, scoring table, radar 1/2 → public/img (ASSET_GATHER §B)." },
     ],
     next: [
-      { title: "WS4.3 — Save/session integrity", project: "tpc-online-platform", owner: "natalie", note: "Engineering #1. Pre-pilot: WS4.3-01 forged-score fail-closed (R3) + WS4.3-03 failed completed-save retry/offline (R6). In-progress draft/resume (WS4.3-02/04) deferred — don't build a persistence system pre-pilot (codex)." },
+      { title: "WS4.3 — Save/session integrity", project: "tpc-online-platform", owner: "natalie", note: "Engineering #1. Implement fail-closed grading, server-created cross-device DraftSessions, stable draftId/sessionId idempotency, explicit skipped attempts, slim submitted metadata, and private reads for everything except ping." },
       { title: "WS5 — Admin & content", project: "tpc-online-platform", owner: "natalie", note: "Engineering #2. List/lifecycle UI (WS5-01), editor+validation (WS5-02), backend state machine (WS5-03), seed authored sets only — never real_seed (WS5-04). Live policy serves 0 sheet questions until rows are approved." },
       { title: "WS4.2 — Fixed QuestionSet practice", project: "tpc-online-platform", owner: "natalie", note: "Engineering #3. Run a QuestionSet in fixed order through the runner (test-like defaults). Depends on WS5-04 sets." },
       { title: "WS6 — Polish → pilot → launch", project: "tpc-online-platform", owner: "natalie", note: "Engineering #4. Accuracy/copy/timer/accessibility + concurrency smoke (R8, WS6-10) → WS6-11 pilot → launch free Practice. R7 malformed-payload guard already done (WS4.1-08)." },
@@ -256,6 +256,8 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-06-30", who: "Codex (GPT-5)", project: "tpc-online-platform",
+      summary: "Locked WS4.3 save/session planning: server-created cross-device DraftSessions, stable draftId/sessionId idempotency, server-gradeable cloud submissions only, explicit skipped attempts, slim submitted draft metadata, and only ping as a public read. Routed question snapshots to WS7-10 and timing semantics to WS7-11." },
     { date: "2026-06-28", who: "Codex", project: "tpc-online-platform",
       summary: "WS2-07 region/year-level capture is live and passed user check: public frontend gh-pages 548f2ca serves bundle index-PmkUqDvs.js with Region setup UI; Cloud Run tpc-api-00015-khx serves 100% with recordLogin/lastLoginAt; live TPC Customers.Users header has region after yearLevel and lastLoginAt at the end; ROADMAP/HANDOFF updated to mark WS2-07 done." },
     { date: "2026-06-28", who: "Claude (Opus 4.8)", project: "",
