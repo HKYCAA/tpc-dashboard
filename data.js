@@ -40,7 +40,7 @@ window.TPC_DASHBOARD = {
 
   // The single most important thing to know before starting work today.
   focus:
-    "tpc-online-platform WS4.3 save/session integrity is live on the backend: Results.DraftSessions exists, Cloud Run tpc-api-00017-ct4 serves 100%, attemptId is backend-generated, and live Sheets now include 30 K2 authored dummy arithmetic questions for signed-in testing. Next platform focus: WS5 admin/content, then WS4.2 fixed QuestionSet practice and WS6 pilot polish.",
+    "tpc-online-platform WS4.3 save/session integrity is fully hardened and live. A full risk review (H1 + M1–M8 + L1–L7) is closed: Codex fixed every correctness/reliability item (token-expiry recovery, durable retry queue, phantom-draft abort, partial-save repair, monotonic drafts, same-session save lock, finish-checkpoint, fail-closed grading, setup-write surfacing) and routed the ranked-Test-Mode/ops items (L2→WS7-11, L3→WS7-12, L4→WS6-16, L6→WS8-01, L7→WS6-17). Deployed: Cloud Run tpc-api-00021-trw + public gh-pages cc64b52; tests pass (backend 19, frontend 231). Next platform focus: WS5 admin/content → WS4.2 fixed QuestionSet practice → WS6 pilot polish.",
 
   /* --- projects --------------------------------------------------------- */
   projects: [
@@ -66,7 +66,7 @@ window.TPC_DASHBOARD = {
       health: "active",
       repo:  "github.com/thepyramidchallenge/tpc-online-platform",
       run:   "cd tpc-online-platform/prototype-v0.2 && npm install && npm run dev   # Vite local URL",
-      next:  "WS4.3 save integrity backend/table work is live. Engineering-first order now: WS5 admin/content → WS4.2 mock → WS6 pilot/launch; then Business-Space validation (WS7-06 log-only + WS9-00 $99 report MVP = E1 north-star) with WS7/8/9 subscription gated on E1/E2.",
+      next:  "WS4.3 save integrity is fully hardened and live (H1 + M1–M8 + L1–L7 reviewed and fixed/routed; Cloud Run tpc-api-00021-trw + gh-pages cc64b52). Engineering-first order now: WS5 admin/content → WS4.2 mock → WS6 pilot/launch; then Business-Space validation (WS7-06 log-only + WS9-00 $99 report MVP = E1 north-star) with WS7/8/9 subscription gated on E1/E2.",
     },
     {
       id:    "tpc-online-platform-admin",
@@ -78,7 +78,7 @@ window.TPC_DASHBOARD = {
       health: "active",
       repo:  "github.com/thepyramidchallenge/tpc-online-platform-admin",
       run:   "cd tpc-online-platform-admin/prototype-v0.2 && npm install && npm run dev   # Vite · backend in cloud-run/",
-      next:  "Source of truth for full-stack platform work — tracks the Phase-1 roadmap. WS4.3 backend/table work is live; next platform work is WS5 → WS4.2 → WS6.",
+      next:  "Source of truth for full-stack platform work — tracks the Phase-1 roadmap. WS4.3 save/session integrity fully hardened + deployed (backend tpc-api-00021-trw, frontend cc64b52); next platform work is WS5 → WS4.2 → WS6.",
     },
     {
       id:    "entrance-qr-scan",
@@ -255,6 +255,10 @@ window.TPC_DASHBOARD = {
    * project "" = cross-cutting / workspace.
    * --------------------------------------------------------------------- */
   changelog: [
+    { date: "2026-07-02", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
+      summary: "Full WS4.3 save/session-integrity risk review + verification (against code, tests, and deploy records). First pass flagged 1 High + 8 Medium (H1 token-expiry silent save-loss; M1 non-durable retry queue; M2 phantom client-only draft when createDraftSession fails; M3 orphaned draft rows; M4 non-atomic Sessions/Attempts partial-save data loss; M5 shared-device pending-save bleed across accounts; M6 last-write-wins draft race; M7 finish/submit not crash-safe on refresh; M8 non-transactional double-submit) plus 7 Low (L1 empty-string selectedOptionId grading as 'A'; L2 client-owned attempt set; L3 client timestamps; L4 unbounded DraftSessions; L5 swallowed upsertUser failure; L6 thin cross-device report=R11; L7 Math.random ids/bookmark divergence). Verification: confirmed all fixes are production-wired (not just green tests) — caught L5 as a false-green (test mocked upsertUser to reject, but real backend.upsertUser swallowed failures via safe()), which Codex then fixed (62d2216, upsertUser now throws). All H1/M1–M8/L1/L5 fixed + deployed; L2–L4/L6/L7 routed to WS7-11/WS7-12/WS6-16/WS8-01/WS6-17. Backend 19 tests pass, frontend 231 pass. Residual (documented, not open): M8 lock is same-instance only → cross-instance safety stays with R8/WS6-10; production 'deployed' rests on git + deploy records, not a live smoke (preview sandbox-blocked)." },
+    { date: "2026-07-02", who: "Codex (GPT-5)", project: "tpc-online-platform",
+      summary: "WS4.3 save/session-integrity hardening in response to the risk review. Fixed H1 (auth.js token-expiry check + refreshIdToken re-auth before writes; saves carry throwAuth so the retry path can clear+refresh; Result shows 'sign in again to save'), M1 (durable retry queue: online/focus/visibilitychange listeners + backoff timer + re-entrancy guard), M2 (startQuiz aborts with a message instead of a phantom client-only draft), M3 (markDraftSubmittedIfPresent reconciles the source draft on the saveSession fallback), M4 (repairMissingSessionAttempts backfills a partially-written session on retry), M5 (clear pendingCompletedSaves on sign-out + account switch), M6 (monotonic draftRevision + backend acceptsDraftSaveRevision rejects stale overwrites), M7 (checkpoint pending Result + queue + screen=result before upload), M8 (withSessionSaveLock serializes same uid+sessionId saves; final-submit button disables). Also L1 (fail-closed single_choice grading for empty/whitespace/malformed selectedOptionId/index, backend + frontend) and L5 (upsertUser surfaces write failures so setup stays put on failure). Routed L2→WS7-11, L3→WS7-12, L4→WS6-16, L6→WS8-01, L7→WS6-17. Sensitive-asset cleanup: removed public real-seed K2/K3 photos + full-paper SVG exports from the Pages artifact (old Pages deployment records deleted). Deployed: Cloud Run tpc-api-00021-trw (100%, ping healthy) + public gh-pages cc64b52 (bundle index-D2Ku2D4e.js). Backend 19 tests pass, frontend 231 pass." },
     { date: "2026-07-02", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
       summary: "Frontend UI refresh (presentation only): login + first-login setup now show the real TPC logo lockup (pyramid mark + wordmark); replaced scattered colour-emoji with one monochrome inline-SVG line-icon set across tabs/bell/profile/Recent/status/Result/drafts/pause sheet; Home dashboard now visualizes numbers as an average-accuracy donut ring + Practice-completed progress bar + colour-coded Recent accuracy bars; section collapse toggle changed from the ugly inverted triangle to a right-aligned chevron glyph (always available, whole-section collapse, count in header). Frontend 226 pass / 1 skipped; deployed to public gh-pages (bundle index-CxF-9TzT.js, css index-DhNJaRu6.css); live confirmed. NOTE: a concurrent deploy race on gh-pages briefly overwrote this build — redeployed and re-verified." },
     { date: "2026-07-02", who: "Claude (Opus 4.8)", project: "tpc-online-platform",
